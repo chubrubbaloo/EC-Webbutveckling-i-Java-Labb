@@ -14,16 +14,16 @@ public class ToDo {
     private String title;
 
     @Column
-    private String todo;
+    private String message;
 
     @ManyToOne
     @JoinColumn(name = "appuser_id")
     private AppUser appUser;
 
 
-    public ToDo(String title, String todo, AppUser appUser) {
+    public ToDo(String title, String message, AppUser appUser) {
         this.title = title;
-        this.todo = todo;
+        this.message = message;
         this.appUser = appUser;
     }
 
@@ -51,15 +51,15 @@ public class ToDo {
         return title;
     }
 
-    public String getTodo() {
-        return todo;
+    public String getMessage() {
+        return message;
     }
 
     public void setTitle(String title) {
         this.title = title;
     }
 
-    public void setTodo(String todo) {
-        this.todo = todo;
+    public void setMessage(String todo) {
+        this.message = todo;
     }
 }

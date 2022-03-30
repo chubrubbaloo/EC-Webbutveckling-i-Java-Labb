@@ -1,9 +1,6 @@
 package com.example.spring_uppgifter.dto;
 
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
 public class ToDoResponseDTO {
 

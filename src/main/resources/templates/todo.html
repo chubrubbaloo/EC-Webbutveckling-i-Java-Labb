@@ -4,15 +4,20 @@
     <meta charset="UTF-8">
     <title>Att-Göra-Listan</title>
     <link th:href="@{/todo.css}" rel="stylesheet">
+    <script type="text/javascript" th:src="@{/todo.js}"></script>
 </head>
 <body>
 <div class="container">
     <h1 class="title">Välkommen till din att-göra-lista!</h1>
+    <hr/>
     <div th:each="todo : ${todoList}">
         <h3 th:text="${todo.getTitle()}"></h3>
-        <p th:text="${todo.getTodo()}"></p>
+        <p th:text="${todo.getMessage()}"></p>
+        <button th:data-id="${todo.getId()}" th:onclick="handleDelete(this.getAttribute('data-id'))">Ta bort</button>
         <hr/>
     </div>
+    <br><br>
+    <a th:href="@{/todo/addTodoForm}"><button>Adda ny uppgift</button></a>
 </div>
 
 </body>

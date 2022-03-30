@@ -10,10 +10,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-public class SpringUppgifterApplication {
+public class SpringLabbApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringUppgifterApplication.class, args);
+        SpringApplication.run(SpringLabbApplication.class, args);
     }
 
     @Bean

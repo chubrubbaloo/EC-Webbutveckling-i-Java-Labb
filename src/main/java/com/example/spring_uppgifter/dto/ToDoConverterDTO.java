@@ -22,7 +22,7 @@ public class ToDoConverterDTO {
 
     public ToDoResponseDTO entityToDoResponseDTO(ToDo toDo) {
 
-        return new ToDoResponseDTO(toDo.getId(),toDo.getTitle(),toDo.getTodo(),toDo.getAppUser().getId());
+        return new ToDoResponseDTO(toDo.getId(),toDo.getTitle(),toDo.getMessage(),toDo.getAppUser().getId());
 
     }
 

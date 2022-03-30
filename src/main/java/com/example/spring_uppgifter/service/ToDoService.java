@@ -36,8 +36,8 @@ public class ToDoService {
 
         if (changedToDo.getTitle() != null)
             existingToDo.setTitle(changedToDo.getTitle());
-        if (changedToDo.getTodo() != null)
-            existingToDo.setTodo(changedToDo.getTodo());
+        if (changedToDo.getMessage() != null)
+            existingToDo.setMessage(changedToDo.getMessage());
 
         toDoRepository.save(existingToDo);
         return existingToDo;
