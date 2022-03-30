@@ -1,8 +1,5 @@
 package com.example.spring_uppgifter.controller;
 
-import com.example.spring_uppgifter.dto.ToDoConverterDTO;
-import com.example.spring_uppgifter.dto.ToDoRequestDTO;
-import com.example.spring_uppgifter.dto.ToDoResponseDTO;
 import com.example.spring_uppgifter.entities.ToDo;
 import com.example.spring_uppgifter.service.ToDoService;
 import org.springframework.http.ResponseEntity;
@@ -17,10 +14,8 @@ import java.util.List;
 public class ToDoController {
 
     ToDoService toDoService;
-    ToDoConverterDTO toDoConverterDTO;
-    public ToDoController(ToDoService toDoService, ToDoConverterDTO toDoConverterDTO) {
+    public ToDoController(ToDoService toDoService) {
         this.toDoService = toDoService;
-        this.toDoConverterDTO = toDoConverterDTO;
     }
 
     // Hämtar alla todos.
@@ -37,21 +32,7 @@ public class ToDoController {
     }
 
 
-/*
-    @GetMapping("/{id}")
-    public ToDoResponseDTO returnToDoById(@PathVariable("id") int id) {
-        ToDo toDo = toDoService.findToDoById(id);
-        return toDoConverterDTO.entityToDoResponseDTO(toDo);
-    }
 
- */
-/*
-    @DeleteMapping("/{id}")
-    public void deleteToDoById(@PathVariable("id") int id) {
-        toDoService.removeById(id);
-    }
-
- */
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteToDoById(@PathVariable("id") int id) {
@@ -59,15 +40,7 @@ public class ToDoController {
         return ResponseEntity.status(303).header("Location","/todo").build();
     }
 
-/*
-    @PostMapping
-    public ToDoResponseDTO postTodo(@RequestBody ToDoRequestDTO toDoRequestDTO) {
-       ToDo todo = toDoConverterDTO.todoRequestDTOToEntity(toDoRequestDTO);
-        todo = toDoService.save(todo);
-        return toDoConverterDTO.entityToDoResponseDTO(todo);
-    }
 
- */
 
     @PostMapping
     public String postTodo(@ModelAttribute ToDo toDo) {
@@ -77,14 +50,4 @@ public class ToDoController {
 
 
 
-/*
-    @PutMapping("/{id}")
-    public ToDoResponseDTO updateTodoById(@PathVariable("id") int id, @RequestBody ToDoRequestDTO changedToDoDTO) {
-        ToDo changedToDo = toDoConverterDTO.todoRequestDTOToEntity(changedToDoDTO);
-
-        ToDo toDo = toDoService.updateById(id,changedToDo);
-        return toDoConverterDTO.entityToDoResponseDTO(toDo);
-    }
-
- */
 }
