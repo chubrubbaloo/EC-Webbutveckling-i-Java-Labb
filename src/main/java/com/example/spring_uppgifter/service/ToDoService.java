@@ -19,29 +19,14 @@ public class ToDoService {
         return toDoRepository.findAll();
     }
 
-    public ToDo findToDoById(int id) {
-        return toDoRepository.findById(id).orElseThrow();
-    }
-
     public void removeById(int id) {
         toDoRepository.deleteById(id);
     }
+
 
     public ToDo save(ToDo todo) {
         return toDoRepository.save(todo);
     }
 
-    public ToDo updateById(int id, ToDo changedToDo) {
-        ToDo existingToDo = toDoRepository.findById(id).orElseThrow();
-
-        if (changedToDo.getTitle() != null)
-            existingToDo.setTitle(changedToDo.getTitle());
-        if (changedToDo.getMessage() != null)
-            existingToDo.setMessage(changedToDo.getMessage());
-
-        toDoRepository.save(existingToDo);
-        return existingToDo;
-
-    }
 }
 

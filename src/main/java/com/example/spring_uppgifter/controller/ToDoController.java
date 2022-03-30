@@ -18,7 +18,6 @@ public class ToDoController {
         this.toDoService = toDoService;
     }
 
-    // Hämtar alla todos.
     @GetMapping
     public String returnTodos(Model model) {
         List <ToDo> todoList = toDoService.findAll();
@@ -31,23 +30,15 @@ public class ToDoController {
         return "addTodoForm";
     }
 
-
-
-
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteToDoById(@PathVariable("id") int id) {
         toDoService.removeById(id);
         return ResponseEntity.status(303).header("Location","/todo").build();
     }
 
-
-
     @PostMapping
     public String postTodo(@ModelAttribute ToDo toDo) {
         toDoService.save(toDo);
         return "redirect:/todo";
     }
-
-
-
 }

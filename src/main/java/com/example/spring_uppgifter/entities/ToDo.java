@@ -6,6 +6,7 @@ import javax.persistence.*;
 @Entity
 public class ToDo {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -16,32 +17,23 @@ public class ToDo {
     @Column
     private String message;
 
-    @ManyToOne
-    @JoinColumn(name = "appuser_id")
-    private AppUser appUser;
 
-
-    public ToDo(String title, String message, AppUser appUser) {
+    public ToDo(String title, String message) {
         this.title = title;
         this.message = message;
-        this.appUser = appUser;
     }
 
     public ToDo() {
 
     }
 
+
+
     public void setId(int id) {
         this.id = id;
     }
 
-    public AppUser getAppUser() {
-        return appUser;
-    }
 
-    public void setAppUser(AppUser appUser) {
-        this.appUser = appUser;
-    }
 
     public int getId() {
         return id;
