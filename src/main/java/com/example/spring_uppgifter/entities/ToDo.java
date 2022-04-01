@@ -27,14 +27,6 @@ public class ToDo {
 
     }
 
-
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-
-
     public int getId() {
         return id;
     }
@@ -47,11 +39,4 @@ public class ToDo {
         return message;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public void setMessage(String todo) {
-        this.message = todo;
-    }
 }
