@@ -1,4 +1,63 @@
+*{
+    box-sizing: border-box;
+
+}
+
+container{
+    margin: 20px;
+}
+
 .title{
     text-align: center;
+}
+
+button {
+    width: 125px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: 1px solid black;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+input[type=text], select {
+    height: 25px;
+    width: 50%;
+    display: inline-block;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+
+
+textarea{
+    width: 50%;
+    height: 100px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type=submit] {
+    width: 100px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    outline: 1px solid black;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
 }
 
