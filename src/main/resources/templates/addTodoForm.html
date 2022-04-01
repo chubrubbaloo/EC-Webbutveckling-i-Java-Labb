@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <title>Adda ny uppgift</title>
     <link th:href="@{/todo.css}" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="container">
     <h1 class="title">Lägg till en ny uppgift!</h1>
     <form method="post" th:action="@{/todo}" style="text-align: center">
         <input type="text" name="title" placeholder="Titel">
@@ -15,8 +17,5 @@
         <br><br>
         <input type="submit" value="Spara">
     </form>
-</div>
-
-
 </body>
 </html>

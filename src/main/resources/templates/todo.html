@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <title>Att-Göra-Listan</title>
     <link th:href="@{/todo.css}" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
     <script type="text/javascript" th:src="@{/todo.js}"></script>
 </head>
 <body>
-<div class="container">
     <h1 class="title">Välkommen till din att-göra-lista!</h1>
     <hr/>
     <div th:each="todo : ${todoList}">
@@ -18,7 +20,6 @@
     </div>
     <br><br>
     <a th:href="@{/todo/addTodoForm}"><button>Ny uppgift</button></a>
-</div>
 
 </body>
 </html>
