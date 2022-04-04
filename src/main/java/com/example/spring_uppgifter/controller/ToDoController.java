@@ -25,11 +25,6 @@ public class ToDoController {
         return "todo";
     }
 
-    @GetMapping("/addTodoForm")
-    public String addTodo() {
-        return "addTodoForm";
-    }
-
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteToDoById(@PathVariable("id") int id) {
         toDoService.removeById(id);
