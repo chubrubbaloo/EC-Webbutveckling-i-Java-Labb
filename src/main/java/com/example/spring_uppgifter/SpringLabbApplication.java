@@ -19,10 +19,7 @@ public class SpringLabbApplication {
         return args -> {
 
             ToDo toDo = new ToDo("Studier", "Lär dig Spring Boot & Thymeleaf.");
-            ToDo secondToDo = new ToDo("Hälsa","Få in 30 minuters motion för dagen.");
             toDoRepository.save(toDo);
-            toDoRepository.save(secondToDo);
-
         };
     }
 

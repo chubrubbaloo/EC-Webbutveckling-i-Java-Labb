@@ -18,8 +18,15 @@
         <button th:data-id="${todo.getId()}" th:onclick="handleDelete(this.getAttribute('data-id'))">Ta bort</button>
         <hr/>
     </div>
-    <br><br>
-    <a th:href="@{/todo/addTodoForm}"><button>Ny uppgift</button></a>
-
+    <h1 class="title">Lägg till en ny uppgift!</h1>
+    <hr>
+    <form method="post" th:action="@{/todo}" style="text-align: center">
+        <input type="text" name="title" placeholder="Titel">
+        <br><br>
+        <textarea name="message" placeholder="Mata in din nya uppgift..."></textarea>
+        <br><br>
+        <input type="submit" value="Spara">
+    </form>
+    <hr>
 </body>
 </html>
