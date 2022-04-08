@@ -38,4 +38,10 @@ public class ToDoController {
         toDoService.save(toDo);
         return "redirect:/todo";
     }
+
+    @PutMapping("/{id}")
+    public String putTodo(@RequestBody String message, @PathVariable String id){
+        toDoService.updateMessage(message, id);
+        return "redirect:/todo";
+    }
 }

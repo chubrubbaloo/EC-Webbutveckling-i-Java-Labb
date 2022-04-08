@@ -28,5 +28,11 @@ public class ToDoService {
         return toDoRepository.save(todo);
     }
 
+    public void updateMessage(String message, String id){
+        ToDo todo = toDoRepository.getById(Integer.parseInt(id));
+        todo.setMessage(message);
+        save(todo);
+    }
+
 }
 
