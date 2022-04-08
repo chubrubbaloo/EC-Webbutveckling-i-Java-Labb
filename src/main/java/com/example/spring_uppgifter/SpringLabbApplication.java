@@ -7,6 +7,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.util.Date;
+
 @SpringBootApplication
 public class SpringLabbApplication {
 
@@ -19,6 +21,7 @@ public class SpringLabbApplication {
         return args -> {
 
             ToDo toDo = new ToDo("Studier", "Lär dig Spring Boot & Thymeleaf.");
+            toDo.setCreatedPostTime(new Date(120,01,15,18,30,10));
             toDoRepository.save(toDo);
         };
     }

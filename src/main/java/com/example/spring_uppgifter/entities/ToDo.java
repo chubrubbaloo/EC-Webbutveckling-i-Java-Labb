@@ -2,6 +2,7 @@ package com.example.spring_uppgifter.entities;
 
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 public class ToDo {
@@ -15,16 +16,28 @@ public class ToDo {
     private String title;
 
     @Column
+    private Date createdPostTime;
+
+    @Column
     private String message;
 
 
     public ToDo(String title, String message) {
         this.title = title;
+        this.createdPostTime = new Date();
         this.message = message;
     }
 
     public ToDo() {
 
+    }
+
+    public Date getCreatedPostTime() {
+        return createdPostTime;
+    }
+
+    public void setCreatedPostTime(Date createdPostTime) {
+        this.createdPostTime = createdPostTime;
     }
 
     public void setId(int id) {
